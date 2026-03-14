@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckCircle2, Loader2, Terminal } from "lucide-react";
-import { motion } from "framer-motion";
+import { CircleCheck as CheckCircle2, Loader as Loader2, Terminal } from "lucide-react";
 
 export default function LoadingSteps() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -80,7 +79,9 @@ export default function LoadingSteps() {
 
               {isCurrent && (
                 <div className="flex items-center gap-2 opacity-50">
-                  <motion.div initial={{ width: "0%" }} animate={{ width: "73%" }} transition={{ duration: 0.8 }} className="h-2 w-24 bg-orange-500 rounded-full"></motion.div>
+                  <div className="h-2 w-24 bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-full w-[73%] bg-orange-500 rounded-full animate-pulse"></div>
+                  </div>
                   <span className="text-[10px] font-bold">73%</span>
                 </div>
               )}
