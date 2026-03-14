@@ -1,10 +1,6 @@
 import asyncio
-import os
 import json
-import google.generativeai as genai
-
-# Use same env config
-model = genai.GenerativeModel('gemini-2.5-flash', generation_config={"response_mime_type": "application/json"})
+from config import gemini_model as model
 
 async def generate_verdict(claim: str, evidence: list, triplets: list):
     """
@@ -66,3 +62,4 @@ async def generate_verdict(claim: str, evidence: list, triplets: list):
                 }
             ]
         }
+
